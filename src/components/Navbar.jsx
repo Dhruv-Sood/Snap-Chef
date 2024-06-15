@@ -1,11 +1,16 @@
 import { useContext } from 'react';
 import { AuthContext } from '../App';
+import { Link } from 'react-router-dom';
+
 const Navbar = ({ handleSignOut, signInWithGoogle }) => {
     const { user } = useContext(AuthContext);
     return (
-        <div className="navbar bg-base-100 fixed z-20">
+        <div className="navbar bg-base-100 fixed z-[100]">
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <Link to="/">
+                    <div className="btn btn-ghost text-xl">daisyUI</div>
+                </Link>
+                
             </div>
             <div className="flex-none">
                 <div className="dropdown dropdown-end">
