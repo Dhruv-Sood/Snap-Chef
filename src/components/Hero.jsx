@@ -38,7 +38,7 @@ const Hero = () => {
               <div className="hero-content flex-col lg:flex-row-reverse">
                   <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmFpNjg1NnFhbWcyYjM5OXU5OGNtZno3cWk1NTRmMXNweHJtaHhycSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yhPxS1j2VGxYMccZaX/giphy.gif" className="max-w-lg rounded-lg shadow-2xl" />
                   <div>
-                      <h1 className="text-5xl font-bold">Box Office News!</h1>
+                      <h1 className="text-5xl font-bold">Welcome to SnapChef!!</h1>
                       <p className="py-6 pr-20 text-xl">You don't have to cook fancy or complicated masterpieces – just good food from fresh ingredients</p>
                         <p className="text-lg font-semibold mb-10">- Julia Child</p>
                       <a href="#features"><button className="btn btn-primary">Get Started</button></a>

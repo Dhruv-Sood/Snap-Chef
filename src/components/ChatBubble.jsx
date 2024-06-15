@@ -13,10 +13,10 @@ const ChatBubble = ({ start, text }) => {
 
   const handleBookmark = () => {
     if (!isBookmarked) {
-      setIsBookmarked(true);
+      
       const saveChat = async () => {
         if (!user) {
-          console.error("No user is authenticated");
+          alert("You need to be logged in to bookmark a chat.");
           return;
         }
 
@@ -29,6 +29,7 @@ const ChatBubble = ({ start, text }) => {
           };
           await addDoc(chatRef, chatData);
           console.log("Chat saved successfully");
+          setIsBookmarked(true);
         } catch (error) {
           console.error("Error saving chat:", error);
           // Consider showing an error message to the user

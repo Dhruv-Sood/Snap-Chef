@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm"; // For GitHub flavored markdown (tables, strikethrough, etc.)
 
-const RecipeScan = () => {
+const RecipeScan = ({ handleSignOut , signInWithGoogle }) => {
     const [isFileSelected, setIsFileSelected] = useState(false);
     const [image, setImage] = useState(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -60,7 +60,7 @@ const RecipeScan = () => {
 
     return (
         <>
-            <Navbar />
+            <Navbar handleSignOut={handleSignOut} signInWithGoogle={signInWithGoogle} />
             {isSubmitted ? (
                 <div className=" h-[100vh] w-full flex justify-center items-center p-4">
                     <div className="mockup-window border border-base-300 h-[80%] w-full">

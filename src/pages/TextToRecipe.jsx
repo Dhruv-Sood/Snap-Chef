@@ -7,7 +7,7 @@ import {
   HarmBlockThreshold,
 } from "@google/generative-ai";
 import ChatBubbleSkeleton from "../components/ChatBubbleSkeleton";
-const TextToRecipe = () => {
+const TextToRecipe = ({ handleSignOut, signInWithGoogle }) => {
 
   const [messages, setMessages] = useState(["How can i help you?"
   ]);
@@ -58,7 +58,10 @@ const TextToRecipe = () => {
       },
     ];
 
-    const parts = [{ text: input}];
+    const parts = [
+      // { text: "Answer this question only if it is related to food or recipes." }, 
+      { text: "Answer this question only if it is related to food or recipes. : "+input}
+    ];
 
     const result = await model.generateContent({
       contents: [{ role: "user", parts }],
@@ -91,7 +94,7 @@ const TextToRecipe = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar handleSignOut={handleSignOut} signInWithGoogle={signInWithGoogle} />
       <div className="h-[100vh] p-8 flex justify-center items-center">
         <div className="mockup-window border border-base-300 h-[90%] w-full">
           <div className="border-t border-base-300 flex-grow overflow-y-auto">
