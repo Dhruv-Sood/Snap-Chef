@@ -50,9 +50,9 @@ const Inventory = ({ handleSignOut, signInWithGoogle }) => {
                     YOUR SAVED RECIPIES
                   </h1>
                   <div className="flex flex-wrap gap-4 justify-around">
-                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item, index) => (
-                          <ModalCard key={index} title="Recipe" desc="This is a recipe" btn="View Recipe" />
-                      ))}
+                        {notes.map((note,index) => (
+                            <ModalCard key={index} id={index} note={note} />
+                        ))}
                   </div>
 
               </div>
