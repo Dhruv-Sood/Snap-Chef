@@ -52,14 +52,16 @@ if __name__ == '__main__':
 
 '''
 
-from flask import Flask, request, jsonify
+from flask import Flask, render_template
+
+
 import os
 from flask_cors import CORS
 import google.generativeai as genai
 import PIL.Image
 from dotenv import load_dotenv
 import io  # Added for handling image data
-
+app = Flask(__name__)
 # Load environment variables from .env file
 load_dotenv()
 
