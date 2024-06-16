@@ -36,7 +36,7 @@ const Hero = () => {
     <div>
           <div className="hero min-h-screen bg-base-200">
               <div className="hero-content flex-col lg:flex-row-reverse">
-                  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmFpNjg1NnFhbWcyYjM5OXU5OGNtZno3cWk1NTRmMXNweHJtaHhycSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yhPxS1j2VGxYMccZaX/giphy.gif" className="max-w-lg rounded-lg shadow-2xl" />
+                  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmFpNjg1NnFhbWcyYjM5OXU5OGNtZno3cWk1NTRmMXNweHJtaHhycSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yhPxS1j2VGxYMccZaX/giphy.gif" className=" rounded-lg shadow-2xl" />
                   <div>
                       <h1 className="text-5xl font-bold">Welcome to SnapChef!!</h1>
                       <p className="py-6 pr-20 text-xl">You don't have to cook fancy or complicated masterpieces – just good food from fresh ingredients</p>
