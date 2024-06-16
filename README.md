@@ -1,12 +1,12 @@
 
 # Snap Chef
 
-SnapChef is a React-based application designed to help those who can't cook by providing them with recipes based on text and images. Additionally, it includes a calorie calculator (currently in development) and an inventory for bookmarked recipes. Built with Vite, SnapChef offers a fast and smooth development experience.
+Snap-Chef is a React-based application designed to help those who can't cook by providing them with recipes based on text and images. Additionally, it includes a calorie calculator (currently in development) and an inventory for bookmarked recipes. Built with Vite, Snap-Chef offers a fast and smooth development experience.
 
 ## Features
 
-1. **Text to Recipe**: Enter ingredients or dish names, and SnapChef will generate a list of recipes for you.
-2. **Image to Recipe**: Upload an image of ingredients or a dish, and SnapChef will suggest recipes based on the image.
+1. **Text to Recipe**: Enter ingredients or dish names, and Snap-Chef will generate a list of recipes for you.
+2. **Image to Recipe**: Upload an image of ingredients or a dish, and Snap-Chef will suggest recipes based on the image.
 3. **Calories Calculator (In Development)**: Calculate the calories of your meals using the ingredients or recipes provided.
 4. **Inventory for Bookmarked Recipes**: Save and manage your favorite recipes in an easy-to-access inventory.
 ## Getting Started
@@ -24,13 +24,13 @@ Make sure you have the following installed:
 1. **Clone the repository**:
 
     ```bash
-    git clone https://github.com/yourusername/snapchef.git
+    git clone https://github.com/yourusername/Snap-Chef.git
     ```
 
 2. **Navigate to the project directory**:
 
     ```bash
-    cd snapchef
+    cd Snap-Chef
     ```
 
 3. **Install the dependencies**:
@@ -108,7 +108,7 @@ Access your bookmarked recipes in the Inventory section.
 
 ## Contributing
 
-We welcome contributions to SnapChef! If you'd like to contribute, please follow these steps:
+We welcome contributions to Snap-Chef! If you'd like to contribute, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch: `git checkout -b feature/your-feature-name`.
