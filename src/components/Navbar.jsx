@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import profile from '../assets/profile.png';
 
 
-const Navbar = ({ handleSignOut, signInWithGoogle }) => {
+const Navbar = ({ handleSignOut, signInWithGoogle  , fixed}) => {
     const { user } = useContext(AuthContext);
     return (
-        <div className="navbar bg-base-100 fixed z-[100]" data-theme="cyberpunk" >
+        <div className={`navbar bg-base-100 ${fixed ? "fixed" : ""} z-[100]`} data-theme="cyberpunk" >
             <div className="flex-1">
                 <Link to="/">
                     <div className="btn btn-ghost text-xl">SnapChef</div>
