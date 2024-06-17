@@ -1,3 +1,4 @@
+import { set } from "firebase/database";
 import Navbar from "../components/Navbar";
 import { useState, useRef } from "react";
 import ReactMarkdown from "react-markdown";
@@ -8,7 +9,7 @@ const RecipeScan = ({ handleSignOut, signInWithGoogle }) => {
     const [image, setImage] = useState(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const fileInputRef = useRef(null);
-
+    const [loading, setLoading] = useState(false);
     const [response, setResponse] = useState("");
 
     const handleFileChange = (event) => {
@@ -24,6 +25,10 @@ const RecipeScan = ({ handleSignOut, signInWithGoogle }) => {
     };
 
     const handleSubmit = async () => {
+        if (!image) {
+            return;
+        }
+        setLoading(true);
         const formData = new FormData();
         formData.append('image', image);
 
@@ -38,6 +43,7 @@ const RecipeScan = ({ handleSignOut, signInWithGoogle }) => {
             const result = await response.json();
             setResponse(result.message);
             setIsSubmitted(true);
+            setLoading(false);
         } catch (error) {
             console.error('Error:', error);
         }
@@ -47,9 +53,9 @@ const RecipeScan = ({ handleSignOut, signInWithGoogle }) => {
         <>
             <Navbar handleSignOut={handleSignOut} signInWithGoogle={signInWithGoogle} />
             {isSubmitted ? (
-                <div className="h-[100vh] w-full flex justify-center items-center p-4">
+                <div className={`h-[100vh] w-full flex justify-center items-center p-4`}>
                     <div className="mockup-window border border-base-300 h-[80%] w-full">
-                        <div className="flex-col justify-center px-4 py-16 border-t border-base-300 font-bold text-xl overflow-y-scroll">
+                        <div className="flex-col justify-center px-4 py-16 border-t border-base-300 font-bold text-xl overflow-y-scroll" data-theme="cyberpunk" >
                             <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                 {response}
                             </ReactMarkdown>
@@ -57,27 +63,33 @@ const RecipeScan = ({ handleSignOut, signInWithGoogle }) => {
                     </div>
                 </div>
             ) : (
-                <div className="w-full h-[100vh] flex flex-col justify-center items-center gap-2 p-2">
-                    <div className="flex gap-2">
-                        <input
-                            type="file"
-                            ref={fileInputRef}
-                            className="file-input file-input-bordered file-input-primary w-full max-w-xs"
-                            onChange={handleFileChange}
-                            accept=".jpg, .png"
-                        />
-                        <div>
-                            <button className="btn btn-circle btn-outline" onClick={handleReset}>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
+                <>
+                        <div className={`${loading ? "hidden" : ""} w-full h-[100vh] flex flex-col justify-center items-center gap-2 p-2`} data-theme="cyberpunk" >
+                        <div className="flex gap-2">
+                            <input
+                                type="file"
+                                ref={fileInputRef}
+                                className="file-input file-input-bordered file-input-primary w-full max-w-xs"
+                                onChange={handleFileChange}
+                                accept=".jpg, .png"
+                            />
+                            <div>
+                                <button className="btn btn-circle btn-outline" onClick={handleReset}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
+                        <button className={`btn btn-${isFileSelected ? 'primary' : 'secondary'} w-[100px] btn-active`} data-theme="cupcake" onClick={handleSubmit}>
+                            Submit
+                        </button>
                     </div>
-                    <button className={`btn btn-${isFileSelected ? 'primary' : 'secondary'} w-[100px] btn-active`} data-theme="cupcake" onClick={handleSubmit}>
-                        Submit
-                    </button>
-                </div>
+                        <div className={` ${loading ? "" : "hidden"} w-full h-[100vh] flex flex-col justify-center items-center gap-2 p-2`} data-theme="cyberpunk" >
+                            <span className={` loading loading-infinity loading-lg`}></span>
+                        </div>
+                    
+                </>
             )}
         </>
     );

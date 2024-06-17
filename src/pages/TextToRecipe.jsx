@@ -95,8 +95,8 @@ const TextToRecipe = ({ handleSignOut, signInWithGoogle }) => {
   return (
     <>
       <Navbar handleSignOut={handleSignOut} signInWithGoogle={signInWithGoogle} />
-      <div className="h-[100vh] p-8 flex justify-center items-center">
-        <div className="mockup-window border border-base-300 h-[90%] w-full">
+      <div className="h-[100vh] p-8 flex justify-center items-center" data-theme="cyberpunk" >
+        <div className="mockup-window border border-base-300 h-[90%] w-full" data-theme="aqua">
           <div className="border-t border-base-300 flex-grow overflow-y-auto">
             <div className="flex flex-col h-full">
               <div className="flex-grow overflow-y-auto p-4">

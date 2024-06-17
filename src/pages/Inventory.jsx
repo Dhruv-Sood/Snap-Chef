@@ -44,7 +44,7 @@ const Inventory = ({ handleSignOut, signInWithGoogle }) => {
     <>
           <Navbar handleSignOut={handleSignOut} signInWithGoogle={signInWithGoogle} />
           {/* Open the modal using document.getElementById('ID').showModal() method */}
-         <div className="h-[100vh] w-full flex justify-center items-center">
+          <div className="h-[100vh] w-full flex justify-center items-center" data-theme="cyberpunk" >
               <div className="h-[80%] w-full flex-col p-4">
                   <h1 className="font-bold text-3xl">
                     YOUR SAVED RECIPIES

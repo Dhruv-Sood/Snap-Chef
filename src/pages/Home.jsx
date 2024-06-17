@@ -8,12 +8,12 @@ import Footer from '../components/Footer'
 
 const Home = ({ handleSignOut, signInWithGoogle }) => {
   return (
-    <>
+    <div data-theme="cyberpunk" >
       <Navbar handleSignOut={handleSignOut} signInWithGoogle={signInWithGoogle }/>
           <Hero />
           <Features />
           <Footer />
-    </>
+    </div>
   )
 }
 export default Home
