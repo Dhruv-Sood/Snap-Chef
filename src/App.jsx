@@ -1,7 +1,7 @@
 import { useState, createContext, useContext, useEffect } from 'react';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from './services/firebaseConfig';
-import './App.css';
+
 
 import Home from './pages/Home';
 import TextToRecipe from './pages/TextToRecipe';
