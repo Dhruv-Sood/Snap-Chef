@@ -52,15 +52,16 @@ const RecipeScan = ({ handleSignOut, signInWithGoogle }) => {
     return (
         <>
             <Navbar handleSignOut={handleSignOut} signInWithGoogle={signInWithGoogle} />
+            <div className={`h-[100vh] w-full flex justify-center items-center p-4`} data-theme="cyberpunk">
             {isSubmitted ? (
-                <div className={`h-[100vh] w-full flex justify-center items-center p-4`}>
+                
                     <div className="mockup-window border border-base-300 h-[80%] w-full">
                         <div className="flex-col justify-center px-4 py-16 border-t border-base-300 font-bold text-xl overflow-y-scroll" data-theme="cyberpunk" >
                             <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                 {response}
                             </ReactMarkdown>
                         </div>
-                    </div>
+
                 </div>
             ) : (
                 <>
@@ -91,6 +92,7 @@ const RecipeScan = ({ handleSignOut, signInWithGoogle }) => {
                     
                 </>
             )}
+            </div>
         </>
     );
 };
