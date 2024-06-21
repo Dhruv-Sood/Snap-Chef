@@ -46,14 +46,14 @@ const Inventory = ({ handleSignOut, signInWithGoogle }) => {
     
   return (
     <>
-          <Navbar handleSignOut={handleSignOut} signInWithGoogle={signInWithGoogle} />
+          <Navbar handleSignOut={handleSignOut} signInWithGoogle={signInWithGoogle} fixed={false}/>
           {/* Open the modal using document.getElementById('ID').showModal() method */}
-          <div className="h-[100vh] w-full flex justify-center items-center" data-theme="cyberpunk" >
+          <div className="w-full flex justify-center items-center" data-theme="cyberpunk" >
               <div className="h-[80%] w-full flex-col p-4">
-                  <h1 className="font-bold text-3xl">
+                  <h1 className="font-bold text-3xl mb-8">
                     YOUR SAVED RECIPIES
                   </h1>
-                  <div className="flex flex-wrap gap-4 justify-around">
+                  <div className="flex flex-wrap gap-4 justify-around mb-4">
                         {notes.map((note,index) => (
                             <ModalCard key={index} id={index} note={note} />
                         ))}
