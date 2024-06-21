@@ -195,7 +195,7 @@ const TextToRecipe = ({ handleSignOut, signInWithGoogle }) => {
 
     const parts = [
 
-      { text: "Answer this question only if it is related to food or recipes. : " + input }
+      { text: "Answer this question only if it is related to food or recipes , If it is a dish give its recipe. : " + input }
     ];
 
     const result = await model.generateContent({
