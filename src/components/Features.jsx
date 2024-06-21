@@ -7,7 +7,7 @@ const Features = () => {
             <div className="p-2 rounded-lg">
                 <h1 className="text-3xl font-bold">Services</h1>
             </div>
-            <div className="card-container flex flex-col md:flex-row gap-2">
+            <div className="card-container flex flex-col md:flex-row gap-2 mb-4">
                 <Link to="/text-to-recipe">
                     <Card btn={"Text-To-Recipe"} title={"Recipe Maker"} desc={"Just throw in the integriends you have and make a dish of your lifetime!"}></Card>
                 </Link>
