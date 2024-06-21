@@ -2,7 +2,7 @@ import { useEffect, useState,useContext } from "react";
 import ModalCard from "../components/ModalCard"
 import Navbar from "../components/Navbar"
 import { db } from "../services/firebaseConfig"; // Import your Firestore instance
-import { collection, getDocs, onSnapshot, query, where } from "firebase/firestore";
+import { collection, getDocs, onSnapshot, query, where, orderBy } from "firebase/firestore";
 import { update } from "firebase/database";
 import { AuthContext } from "../App";
 
@@ -15,7 +15,11 @@ const Inventory = ({ handleSignOut, signInWithGoogle }) => {
         // Check if user is available 
         if (user) {
             const notesCollection = collection(db, "notes");
-            const userNotesQuery = query(notesCollection, where("userID", "==", user.uid));
+            const userNotesQuery = query(
+                notesCollection,
+                where("userID", "==", user.uid),
+                orderBy("timestamp", "desc")  // Sort by timestamp descending (newest first)
+            );
 
             // Initial fetch 
             getDocs(userNotesQuery)
