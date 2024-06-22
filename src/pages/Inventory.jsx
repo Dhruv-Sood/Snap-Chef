@@ -43,6 +43,11 @@ const Inventory = ({ handleSignOut, signInWithGoogle }) => {
         console.log("Updated notes:", notes);
     }, [notes]); 
 
+    useEffect(()=>{
+        if(!user){
+            setNotes([])
+        }
+    },[user])
     
   return (
     <>

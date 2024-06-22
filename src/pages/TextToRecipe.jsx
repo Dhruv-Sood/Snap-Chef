@@ -276,6 +276,7 @@ const TextToRecipe = ({ handleSignOut, signInWithGoogle }) => {
           </div>
         </div>
       </div>
+  
 
     </>
   );
