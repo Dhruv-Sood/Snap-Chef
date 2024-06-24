@@ -130,7 +130,8 @@ const RecipeScan = ({ handleSignOut, signInWithGoogle }) => {
                         </button>
                     </div>
                         <div className={` ${loading ? "" : "hidden"} w-full h-[100vh] flex flex-col justify-center items-center gap-2 p-2`} data-theme="cyberpunk" >
-                            <span className={` loading loading-infinity loading-lg`}></span>
+                            <div className={` loading loading-infinity loading-lg`}></div>
+                            <div>(The backend is hosted on Render which might take 50 secs or more to cold start, if server is inactive)</div>
                         </div>
                     
                 </>
